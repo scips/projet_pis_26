@@ -7,6 +7,7 @@ import type { EventClickArg } from '@fullcalendar/core';
 import { collection, addDoc, onSnapshot, doc, getDoc, Timestamp, deleteDoc, updateDoc } from 'firebase/firestore';
 import { getFirestoreDb } from '../firebase/config';
 import { useAuth } from '../contexts/AuthContext';
+import CustomView from '../components/CustomView';
 
 type FirestoreDateLike = Timestamp | { seconds: number } | string | number | Date | null | undefined;
 
@@ -424,6 +425,7 @@ const CalendarPage: React.FC = () => {
               });
             }}
           />
+          <CustomView />
         </Suspense>
       </div>
 
